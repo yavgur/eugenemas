@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react'
 import Material from 'materialize-css'
+import '../styles/style.css'
 
 const Header = () => {
     useEffect(() => {
@@ -7,15 +8,13 @@ const Header = () => {
     })
     return (
         <header>
-        <div className="navbar-fixed">
-            <nav className="blue ligten-3">
+            <nav className="nav-wrapper transparent">
                 <div className="container">
-                    <div className="nav-wrapper">
-                    <a href="/" className="brand-logo">Eugene Islamic Center</a>
+                    <a href="/" className="brand-logo" id="logo" >Eugene Islamic Center</a>
                     <a href="#!" data-target="mobile-nav" className="sidenav-trigger">
                         <i className="material-icons">menu</i>
                     </a>
-                    <ul className="right hide-on-med-and-down">
+                    <ul className="right hide-on-med-and-down" id="menu-items">
                         <li>
                             <a href="/">Home</a>
                         </li>
@@ -30,9 +29,7 @@ const Header = () => {
                         </li>
                     </ul>
                 </div>
-                </div>
             </nav>
-            </div>
             <ul className="sidenav" id="mobile-nav">
             <li>
                             <a href="/">Home</a>
