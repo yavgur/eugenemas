@@ -7,8 +7,8 @@ const Footer = () => {
                 <div className="row">
                     <div className="col s12 l6">
                         <h4>About Our Masjid</h4>
-                        <p>Eugene Islamic Center is an Islamic Community Center in the heart of Oregon. 
-                            It offers a place of worship, provides a variety of Islamic education to congregants and the local community.</p>
+                        <p>Eugene Islamic Center is an islamic community center in the heart of Oregon. 
+                            It offers a place of worship, provides a variety of islamic education to congregants and the local community.</p>
                     </div>
                     <div className="col s12 l4 offset-l2">
                         <h4>Connect</h4>
