@@ -20,7 +20,6 @@ const Prayertime = () => {
                     </div>
                 </div>
             </div>
-            
         </section>
     )
 }

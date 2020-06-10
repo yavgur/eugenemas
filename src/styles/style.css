@@ -16,3 +16,12 @@ header {
 #people2 {
     padding-left: 10px;
 }
+.tabs .indicator {
+    background-color: grey;
+}
+.tabs .tab a:focus, .tabs .tab a:focus.active {
+    background: transparent;
+}
+#donation-box {
+    padding-top: 7rem;
+}
