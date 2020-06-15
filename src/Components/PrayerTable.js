@@ -1,63 +1,82 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
+import React, { Component } from 'react'
+import axios from 'axios';
 
-const useStyles = makeStyles({
-  table: {
-    minWidth: 650,
-  },
-});
 
-function createData(name, athan, iqama) {
-  return { name, athan, iqama };
-}
+class PrayerTable extends Component {
+  state = {
+    prayertimes: []
+  }
+  componentDidMount() {
+    // axios.get('http://api.aladhan.com/v1/timingsByCity?city=Eugene&country=United%20States&method=2')
+    axios.get('http://api.aladhan.com/v1/timingsByCity?city=Eugene&country=United%20States&method=99&methodSettings=15,null,15')
+    .then(res => {
+      this.setState({
+        prayertimes: res.data
+      })
+    })
+  }
+  render() {
+    const { prayertimes } = this.state;
+    const prayertime = prayertimes.data ? (
+          <section className="section container" id="prayertable">
+                 <div className="row">
+                     <div className="col s12">
+                       <div className="center grey darken-1 card-panel">
+                          <h5>{prayertimes.data.date.readable}</h5>
+                          <h5>Hijri: {prayertimes.data.date.hijri.date}</h5>
+                       </div>
+                     <table>
+                          <thead>
+                            <tr>
+                                <th>Salah</th>
+                                <th>Adhan</th>
+                                <th>Iqama</th>
+                            </tr>
+                          </thead>
 
-const rows = [
-  createData('Fajr', 'time', 'time'),
-  createData('Dhur', 'time', 'time'),
-  createData('Asr', 'time', 'time'),
-  createData('Magrib', 'time', 'time'),
-  createData('Isha', 'time', 'time'),
-  createData('Juma Prayer', 'time', 'time')
-];
-
-export default function SimpleTable() {
-  const classes = useStyles();
-
+                          <tbody>
+                            <tr>
+                              <td>Fajr</td>
+                              <td>{prayertimes.data.timings.Fajr}</td>
+                              <td>time</td>
+                            </tr>
+                            <tr>
+                              <td>Dhuhr</td>
+                              <td>{prayertimes.data.timings.Dhuhr}</td>
+                              <td>time</td>
+                            </tr>
+                            <tr>
+                              <td>Asr</td>
+                              <td>{prayertimes.data.timings.Asr}</td>
+                              <td>time</td>
+                            </tr>
+                            <tr>
+                              <td>Maghrib</td>
+                              <td>{prayertimes.data.timings.Maghrib}</td>
+                              <td>{prayertimes.data.timings.Maghrib}</td>
+                            </tr>
+                            <tr>
+                              <td>Isha</td>
+                              <td>{prayertimes.data.timings.Isha}</td>
+                              <td>{prayertimes.data.timings.Isha}</td>
+                            </tr>
+                             <tr>
+                              <td>Friday(Jummah)</td>
+                              <td>1.30</td>
+                              <td>1.30</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                     </div>
+                 </div>
+           </section>
+              
+    ) : (
+      <p>No times show up</p>
+    )
   return (
-      <section className="section container">
-          <div className="row">
-              <div className="col s12">
-              <TableContainer component={Paper}>
-                <Table className={classes.table} aria-label="simple table">
-                    <TableHead>
-                    <TableRow>
-                        <TableCell></TableCell>
-                        <TableCell align="right">Athan</TableCell>
-                        <TableCell align="right">Iqama</TableCell>
-                    </TableRow>
-                    </TableHead>
-                    <TableBody>
-                    {rows.map((row) => (
-                        <TableRow key={row.name}>
-                        <TableCell component="th" scope="row">
-                            {row.name}
-                        </TableCell>
-                        <TableCell align="right">{row.athan}</TableCell>
-                        <TableCell align="right">{row.iqama}</TableCell>
-                        </TableRow>
-                    ))}
-                    </TableBody>
-                </Table>
-                </TableContainer>
-              </div>
-          </div>
-    </section>
+    prayertime
   );
 }
+}
+export default PrayerTable

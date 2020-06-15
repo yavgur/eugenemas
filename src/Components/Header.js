@@ -27,6 +27,9 @@ const Header = () => {
                         <li>
                             <a href="#contact">Contact</a>
                         </li>
+                        <li>
+                            <a href="#prayertable">Prayer Time</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -42,6 +45,9 @@ const Header = () => {
                         </li>
                         <li>
                             <a href="#contact">Contact</a>
+                        </li>
+                        <li>
+                            <a href="#prayertable">Prayer Time</a>
                         </li>
             </ul>
         </header>

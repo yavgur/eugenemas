@@ -2,7 +2,7 @@ import React from 'react'
 
 const Ourmasjid = () => {
     return (
-        <section className="section container scrollspy" id="contact">
+        <section className="section container scrollspy" id="events">
             <div className="row">
                 <div className="col s12 l4">
                     <h3 className="grey-text text-darken">Our masjid...</h3>

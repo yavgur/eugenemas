@@ -2,7 +2,7 @@ import React from 'react'
 
 const Donate = () => {
     return (
-        <section className="section container scrollspy" id="contact">
+        <section className="section container scrollspy" id="donate">
             <div className="row">
                 <div className="col s12 l6">
                 <div className="z-depth-3 card-panel blue lighten-2 white-text center">
@@ -15,7 +15,7 @@ const Donate = () => {
             </div>
                 <div className="col s12 l5 offset-l1" id="donation-box">
                 <div className="z-depth-1 card-panel grey lighten-1 white-text center">
-                    <h5>You can donate our masjid and show your support.</h5>
+                    <h5>You can donate to our masjid and show your support.</h5>
                         <p className="hoverable"><span><i className="fab fa-paypal small" aria-hidden="true"></i>
                         </span> PayPal : paypal@eugeneislamiccenter.org</p>
                         <p className="hoverable"> Zelle : treasurer@eugeneislamiccenter.org</p>
