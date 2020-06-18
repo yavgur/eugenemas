@@ -2,6 +2,15 @@ import React, { Component } from 'react'
 import axios from 'axios';
 
 
+const getFormattedTime = (fourDigitTime) => {
+  var hours24 = parseInt(fourDigitTime.substring(0,2));
+  var hours = ((hours24 + 11) % 12) + 1;
+  var amPm = hours24 > 11 ? ' PM' : ' AM';
+  var minutes = fourDigitTime.substring(2);
+
+  return hours + minutes + amPm;
+};
+
 class PrayerTable extends Component {
   state = {
     prayertimes: []
@@ -37,33 +46,33 @@ class PrayerTable extends Component {
                           <tbody>
                             <tr>
                               <td>Fajr</td>
-                              <td>{prayertimes.data.timings.Fajr}</td>
-                              <td>time</td>
+                              <td>{getFormattedTime(prayertimes.data.timings.Fajr)}</td>
+                              <td>{getFormattedTime(prayertimes.data.timings.Fajr)}</td>
                             </tr>
                             <tr>
                               <td>Dhuhr</td>
-                              <td>{prayertimes.data.timings.Dhuhr}</td>
-                              <td>time</td>
+                              <td>{getFormattedTime(prayertimes.data.timings.Dhuhr)}</td>
+                              <td>{getFormattedTime(prayertimes.data.timings.Dhuhr)}</td>
                             </tr>
                             <tr>
                               <td>Asr</td>
-                              <td>{prayertimes.data.timings.Asr}</td>
+                              <td>{getFormattedTime(prayertimes.data.timings.Asr)}</td>
                               <td>time</td>
                             </tr>
                             <tr>
                               <td>Maghrib</td>
-                              <td>{prayertimes.data.timings.Maghrib}</td>
-                              <td>{prayertimes.data.timings.Maghrib}</td>
+                              <td>{getFormattedTime(prayertimes.data.timings.Maghrib)}</td>
+                              <td>{getFormattedTime(prayertimes.data.timings.Maghrib)}</td>
                             </tr>
                             <tr>
                               <td>Isha</td>
-                              <td>{prayertimes.data.timings.Isha}</td>
-                              <td>{prayertimes.data.timings.Isha}</td>
+                              <td>{getFormattedTime(prayertimes.data.timings.Isha)}</td>
+                              <td>{getFormattedTime(prayertimes.data.timings.Isha)}</td>
                             </tr>
                              <tr>
                               <td>Friday(Jummah)</td>
-                              <td>1.30</td>
-                              <td>1.30</td>
+                              <td>1.30 pm</td>
+                              <td>1.30 pm</td>
                             </tr>
                           </tbody>
                         </table>
