@@ -7,6 +7,7 @@ import Tevhid from './Components/Tevhid'
 import Ourmasjid from './Components/Ourmasjid'
 import Madina from './Components/Madina'
 import Donate from './Components/Donate'
+import WhyIslam from './Components/WhyIslam'
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
        <Ourmasjid />
        <Madina />
        <Donate />
+       <WhyIslam />
        <Footer />
       </div>
     )
