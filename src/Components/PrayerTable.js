@@ -45,7 +45,7 @@ class PrayerTable extends Component {
                             <tr>
                                 <th>Salah</th>
                                 <th>Adhan</th>
-                                <th className="tooltipped" data-position="right" data-tooltip="This time may very">Iqama</th>
+                                <th>Iqama</th>
                             </tr>
                           </thead>
 
