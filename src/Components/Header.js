@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import Material from 'materialize-css'
 import '../styles/style.css'
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     useEffect(() => {
@@ -17,7 +17,7 @@ const Header = () => {
                     </a>
                     <ul className="right hide-on-med-and-down" id="menu-items">
                         <li>
-                            <NavLink to="/whyislam">WhyIslam</NavLink>
+                            <Link to="/whyislam">WhyIslam</Link>
                         </li>
                         <li>
                             <a href="#events">Events</a>
@@ -36,7 +36,7 @@ const Header = () => {
             </nav>
             <ul className="sidenav" id="mobile-nav">
             <li>
-                            <NavLink to="/whyislam">WhyIslam</NavLink>
+                            <Link to="/whyislam">WhyIslam</Link>
                         </li>
                         <li>
                             <a href="#events">Events</a>

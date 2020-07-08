@@ -1,19 +1,11 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-
+import moment from 'moment';
 
 const getFormattedTime = (fourDigitTime, diff) => {
-  let time = Date.now()
-  time = new Date(time)
-  let nonMilitaryTime = fourDigitTime.split(':')
-  time.setHours(nonMilitaryTime[0], nonMilitaryTime[1], 0)
-  var newDateObj = time;
-  if(diff) {
-      newDateObj = new Date(time.getTime() + diff * 60000);
-  }
-  let hours = ((newDateObj.getHours() + 11) % 12) + 1;
-  let amPm = newDateObj.getHours() > 11 ? ' PM' : ' AM';
-  return `${hours}:${newDateObj.getMinutes()} ${amPm}`
+  let newTime = moment(fourDigitTime, 'HH:mm').format('hh:mm a');  
+  if (diff) { newTime = moment(newTime, 'hh:mm a').add(diff, 'minutes').format('hh:mm a'); }
+  return newTime;
 };
 
 class PrayerTable extends Component {
